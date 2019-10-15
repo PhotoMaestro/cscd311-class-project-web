@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>UGHall Registration</title>
+
+	<script"js/index.js"></script>
+
+	<script>
+
+	if (sessionStorage.getItem("loggedIn"))
+            window.location = "reg.html"; 
+			</script>
+
+</head>
+
+<body>
+	
+	<form id="form" class="w-50 mx-auto" onsubmit="login(event)" action="http://localhost:3000/login" method="POST">
+		<fieldset id="hallform" name="input" style="padding-left:40%;
+	 padding-top: 20px;
+	  margin-top:50px;">
+			<legend><b>Hall Registration</b></legend>
+			
+			<input name="studentID" id="studentID" class="form-control" type="text" pattern="[0-9]{8,}"
+                        placeholder="Student ID" oninvalid="setCustomValidity('Invalid ID')"
+                        onchange="setCustomValidity('')" required>
+			<br/>
+			<br/>
+			<input name="pin" id="pin" class="form-control" type="password" placeholder="PIN" maxlength="5"
+                        pattern="[0-9]{5}" oninvalid="setCustomValidity('Invalid PIN')" onchange="setCustomValidity('')"
+                        require>
+			<br/>
+			<br/>
+			<button id="submitBtn" type="submit">
+								Submit
+							</button>
+		</fieldset>
+	</form>
+
+	 
+	<script"js/index.js"></script>
+
+</body>
+
+</html>

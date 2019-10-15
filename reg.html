@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Register</title>
+	<link rel="stylesheet" href="C:\Users\photomaestro\Desktop\cscd311-class-project-web\style.css">
+
+<script>
+if (sessionStorage.getItem("loggedIn"))
+            window.location = "index.html"
+</script>
+
+</head>
+
+<body>
+	<h2 style="padding-left:35%;font-style:normal;letter-spacing:0.305em;line-height: 1.1;font-weight: 700;"><u>Hall Registration</u></h2>
+	<br/>
+	<br/>
+	<br/>
+	<p style="padding-left:20%;">Student ID:<span id="studentID"></span></p>
+	
+	<p style="padding-left:20%;">Status:<span id="status"></span></p>
+	<br/>
+	 <div class="col text-right my-auto">
+                <button style="margin-left:70%"; class="btn btn-danger" onclick="logout()">Logout</button>
+            </div>
+
+	<p id="fill"><u style="margin-left:40%;">Proceed With Application</u></p>
+
+	
+
+
+            <form class="w-50 mx-auto pt-3" action="http://localhost:3000/hall" method="GET" onsubmit="register(event)">
+                <div class="form-group">
+                    <label for="hall" style="margin-left:45%;">Hall</label>
+                    <select class="form-control" id="hall" placeholder="Hall" onchange="getRoom()" enabled
+                        required></select>
+                </div>
+                <div class="form-group">
+                    <label style="margin-left=45%;" for="room">Room</label>
+                    <select class="form-control" id="room" placeholder="Room"
+                        onchange="btnSubmit.removeAttr('enabled')" enabled required></select>
+                </div>
+                <div class="text-center mt-5">
+                    <button id="submit" class="btn btn-primary" style="margin-left:50%;" enabled>Submit</button>
+                </div>
+            </form>
+
+	<script src="js/reg.js"></script>
+
+</body>
+
+</html>
